@@ -16,8 +16,8 @@
     "homepage": "https://github.com/dominator88/omnipay-barclays-dl",
     "license": "MIT",
     "authors": [{
-        "name": "James Nuttall",
-        "email": "james@ghostwhite.net"
+        "name": "MR.Z",
+        "email": "zsh2088@gmail.com"
     }],
     "autoload": {
         "psr-0": {
