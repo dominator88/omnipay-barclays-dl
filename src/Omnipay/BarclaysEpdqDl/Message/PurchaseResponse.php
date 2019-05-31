@@ -17,6 +17,7 @@ class PurchaseResponse extends AbstractResponse
         2  => "Authorisation refused",
         4  => "Order stored",
         41 => "Waiting client payment",
+        46 => "Secure 3D payment",
         5  => "Authorised",
         51 => "Authorisation waiting",
         52 => "Authorisation not known",
@@ -74,6 +75,11 @@ class PurchaseResponse extends AbstractResponse
     {
         $statusCode = isset($this->data['STATUS']) ? $this->data['STATUS'] : false;
         return ($statusCode == Gateway::RESULT_PAYMENT_SUCCESS || $statusCode == Gateway::RESULT_PAYMENT_REQUESTED);
+    }
+
+    public function isSecure3D(){
+        $statusCode = isset($this->data['STATUS']) ? $this->data['STATUS'] : false;
+        return $statusCode == Gateway::RESULT_PAYMENT_SECURE_3D;
     }
 
     public function getTransactionReference()

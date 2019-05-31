@@ -13,6 +13,7 @@ use Omnipay\BarclaysEpdqDl\Message\PurchaseRequest;
 class Gateway extends AbstractGateway
 {
     const RESULT_PAYMENT_SUCCESS   = 5;
+    const RESULT_PAYMENT_SECURE_3D   = 46;
     const RESULT_PAYMENT_REQUESTED = 9;
     const RESULT_PAYMENT_WAITING   = 51;
 
