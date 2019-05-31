@@ -31,7 +31,8 @@ class Gateway extends AbstractGateway
             'clientId' => '',
             'userId'   => '',
             'password' => '',
-            'testMode' => false
+            'testMode' => false,
+            'secure3d' => false,
         );
     }
 
@@ -102,9 +103,9 @@ class Gateway extends AbstractGateway
     }
 
     public function setSecure3D($value){
-        return $this->setParameter('secure_3d',$value);
+        return $this->setParameter('secure3d',$value);
     }
     public function getSecure3D(){
-        return $this->getParameter('secure_3d');
+        return $this->getParameter('secure3d');
     }
 }

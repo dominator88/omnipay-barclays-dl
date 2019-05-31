@@ -75,9 +75,19 @@ class PurchaseRequest extends AbstractRequest
     public function setWin3Ds($value = 'MAINW'){
         return $this->setParameter('win3Ds', $value);
     }
-    public function getWin3Ds($value){
+    public function getWin3Ds(){
         return $this->getParameter('win3Ds');
     }
+
+
+    public function getSecure3D(){
+        return $this->getParameter('secure3d');
+    }
+
+    public function setSecure3D($value){
+        return $this->setParameter('secure3d',$value);
+    }
+
 
     public function getData()
     {
