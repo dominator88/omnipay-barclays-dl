@@ -57,6 +57,7 @@ class PurchaseResponse extends AbstractResponse
         xml_parser_free($xmlParser);
 
         $this->data = $parsedXml[0]['attributes'];
+        $this->data['HTML_ANSWER'] = $parsedXml[1]['value'] ?: '';
     }
 
     public function isPending()
@@ -97,5 +98,9 @@ class PurchaseResponse extends AbstractResponse
     public function getNcErrorPlus()
     {
         return isset($this->data['NCERRORPLUS']) ? $this->data['NCERRORPLUS'] : null;
+    }
+
+    public function getHtmlAnswer(){
+        return $this->data['HTML_ANSWER'];
     }
 }

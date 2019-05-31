@@ -99,4 +99,11 @@ class Gateway extends AbstractGateway
     {
         return $this->setParameter('shaOut', $value);
     }
+
+    public function setSecure3D($value){
+        return $this->setParameter('secure_3d',$value);
+    }
+    public function getSecure3D(){
+        return $this->getParameter('secure_3d');
+    }
 }

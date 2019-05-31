@@ -72,6 +72,12 @@ class PurchaseRequest extends AbstractRequest
     {
         return $this->setParameter('shaOut', $value);
     }
+    public function setWin3Ds($value = 'MAINW'){
+        return $this->setParameter('win3Ds', $value);
+    }
+    public function getWin3Ds($value){
+        return $this->getParameter('win3Ds');
+    }
 
     public function getData()
     {
@@ -84,6 +90,23 @@ class PurchaseRequest extends AbstractRequest
         $data['PSWD']      = $this->getPassword();
         $data['CURRENCY']  = $this->getCurrency();
         $data['AMOUNT']    = $this->getAmountInteger();
+
+
+        //3D secure
+        if($this->getSecure3D()){ 
+            $data['FLAG3D'] = 'Y';
+            $data['HTTP_ACCEPT'] = 'Accept: */*';
+            $data['HTTP_USER_AGENT'] = 'User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.0)';
+            $data['WIN3DS'] = $this->getWin3Ds();
+            $data['ACCEPTURL'] = '';
+            $data['DECLINEURL'] = '';
+            $data['EXCEPTIONURL'] = '';
+            $data['PARAMPLUS'] = '';
+            $data['COMPLUS'] = '';
+            $data['LANGUAGE'] =  'en_US';
+            $data['Optional'] = '';
+            $data['TP'] = 'order_A3DS';
+        }
 
         $card = $this->getCard();
         if ($card) {
@@ -102,8 +125,13 @@ class PurchaseRequest extends AbstractRequest
             $data['OWNERTELNO']    = $card->getPhone();
             $data['OWNERADDRESS']  = $card->getAddress1();
             $data['OWNERADDRESS2'] = $card->getAddress2();
+
         }
 
+        
+            
+        
+          
         // Make sure all parameter keys are uppercase and no null values are passed.
         $data = $this->cleanParameters($data);
 
