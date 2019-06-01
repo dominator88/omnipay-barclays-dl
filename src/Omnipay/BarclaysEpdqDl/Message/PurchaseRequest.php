@@ -115,7 +115,7 @@ class PurchaseRequest extends AbstractRequest
             $data['COMPLUS'] = '';
             $data['LANGUAGE'] =  'en_US';
             $data['Optional'] = '';
-            $data['TP'] = 'order_A3DS';
+            $data['TP'] = '';
         }
 
         $card = $this->getCard();
