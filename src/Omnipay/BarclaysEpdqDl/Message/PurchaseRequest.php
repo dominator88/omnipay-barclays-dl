@@ -80,11 +80,11 @@ class PurchaseRequest extends AbstractRequest
     }
 
 
-    public function getSecure3D(){
+    public function getSecure3d(){
         return $this->getParameter('secure3d');
     }
 
-    public function setSecure3D($value){
+    public function setSecure3d($value){
         return $this->setParameter('secure3d',$value);
     }
 
