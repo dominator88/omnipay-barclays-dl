@@ -107,7 +107,7 @@ class PurchaseRequest extends AbstractRequest
             $data['FLAG3D'] = 'Y';
             $data['HTTP_ACCEPT'] = 'Accept: */*';
             $data['HTTP_USER_AGENT'] = 'User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.0)';
-            $data['WIN3DS'] = $this->getWin3Ds();
+            $data['WIN3DS'] = 'POPUP';
             $data['ACCEPTURL'] = 'http://pay.10086pm.com/api/test';
             $data['DECLINEURL'] = 'http://pay.10086pm.com/api/test';
             $data['EXCEPTIONURL'] = 'http://pay.10086pm.com/api/test';
