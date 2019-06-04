@@ -108,7 +108,7 @@ class PurchaseRequest extends AbstractRequest
             $data['HTTP_ACCEPT'] = 'Accept: */*';
             $data['HTTP_USER_AGENT'] = 'User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.0)';
             $data['WIN3DS'] = 'POPUP';
-            $data['ACCEPTURL'] = 'http://www.baidu.com';
+            $data['CATALOGURL'] = 'http://www.baidu.com';
             $data['DECLINEURL'] = '';
             $data['EXCEPTIONURL'] = '';
             $data['PARAMPLUS'] = '';
