@@ -111,6 +111,8 @@ class PurchaseRequest extends AbstractRequest
             $data['ACCEPTURL'] = 'http://www.baidu.com/1';
             $data['DECLINEURL'] = 'http://www.baidu.com/2';
             $data['EXCEPTIONURL'] = 'http://www.baidu.com/3';
+            $data['CATALOGURL'] = 'http://www.baidu.com/1';
+            $data['HOMEURL'] = 'http://www.baidu.com/2';
             $data['PARAMPLUS'] = '';
             $data['COMPLUS'] = '';
             $data['LANGUAGE'] =  'en_US';
